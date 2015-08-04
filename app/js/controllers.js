@@ -19,4 +19,25 @@ phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams', 'Ph
     $scope.setImage = function(imageUrl) {
       $scope.mainImageUrl = imageUrl;
     };
+
+    $scope.hello = function (name) {
+    	alert('Hello ' + (name || 'world') + '!');
+    };
   }]);
+
+
+phonecatControllers.controller('MainController', ['$scope','$route','$routeParams', '$location',
+	function($scope, $route, $routeParams, $location){
+		$scope.$route = $route;
+		$scope.$location =  $location;
+		$scope.$routeParams = $routeParams;
+	}]);
+
+phonecatControllers.controller('BookController', ['$scope','$routeParams', 'greeting',
+	function($scope, $routeParams, greeting) {
+		$scope.name = "BookController";
+		$scope.params = $routeParams;
+		$scope.onClick = function(bookId) {
+			greeting(bookId);
+		};
+	}]);

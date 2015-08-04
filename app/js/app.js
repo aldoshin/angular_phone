@@ -9,7 +9,7 @@ var phonecatApp = angular.module('phonecatApp', [
   'phonecatControllers',
   'phonecatFilters',
   'phonecatServices'
-]);
+  ]);
 
 phonecatApp.provider('greeting', function () {
   var text = "Hello";
